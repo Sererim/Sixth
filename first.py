@@ -1,29 +1,30 @@
 
 class Calculator:
     
-    def __init__(self) -> None:
-        pass
-    
-    def check_if_allowed (self, list[str]) -> bool:
-        pass
-    
-    def add(self):
-        pass
-    
-    def sub(self):
-        pass
-    
-    def mulp(self):
-        pass
-    
-    def div(self):
-        pass
-    
-    def calc(self):
-        pass
-    
-    
+    @staticmethod
+    def mainloop() -> None:
+        formula: str = ""
+        answer: int = 0
+        char: str = ""
+        
+        while True:
+            formula = input("Enter an equation.\n")
+            try:
+                answer = eval(formula)
+                print(f"Entered equation is: {formula}\nSolution is: {answer}")                
+                
+                char = input("Enter Y or y to terminate the program.\n")
+                if char in ['Y', 'y']:
+                    break
+            except SyntaxError:
+                print("Syntax error!")
+                pass
+            
+        
 def main() -> int:
+    
+    print("Program is running.")
+    Calculator.mainloop()
     return 0
 
 
